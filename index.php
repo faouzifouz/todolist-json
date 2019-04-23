@@ -20,7 +20,7 @@ require 'archives.php';
         
     ?>
 <form action="index.php" method="post">
-  <input class="bt2" type="submit" name="fait" value="Check" id="bouton"/>
+  <input class="bt2" type="submit"  name="fait" value="Check" id="bouton"/>
 
 </form>
 </section>

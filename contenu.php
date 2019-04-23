@@ -11,7 +11,8 @@ $data = file_get_contents('todo.json');
 $json_arr = json_decode($data, true);
 
 //ajouter les données récoltée dans le contenu de mon json initial        
-$json_arr[] = array("tache" => $in);
+$json_arr[] = array("tache" => $in,
+"bool" => false);
 
 //enregistrer les modification
 file_put_contents('todo.json', json_encode($json_arr));
@@ -41,7 +42,7 @@ echo'
  foreach ($json_arr as $key => $value) {
 
      echo '<div class="content'.$i.' contenant">
-      <input type="checkbox" name="check[]" /> - Tache N° ' . $i . ": " . $key["tache"] . 
+      <input type="checkbox" name="check[]" /> - Tache N° ' . $i . ": " . $value["tache"] . 
       ' </div>' ;
 
       $i++;

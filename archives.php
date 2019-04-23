@@ -1,17 +1,9 @@
 <?php
 if(isset($_POST['fait'])){
-  //parcourir et afficher le tableau
+  // parcourir et afficher le tableau
 
-//   $i = 0;
-//   $task = foreach ($json_arr as $key => $value) {
   
-//   echo '<div class="content'.$i.' contenant">
-//    <input type="checkbox" disabled checked name="check[]'.$i.'" /> - Tache N° ' . $i . ": " . $key["tache"] .
-//    '</div>' ;
-//    $i++;
-// };
-  
-  
+  $in=$_POST['fait'];
   //charger mon json
   $data = file_get_contents('todo.json');
   
@@ -19,7 +11,8 @@ if(isset($_POST['fait'])){
   $json_arr = json_decode($data, true);
   
   //ajouter les données récoltée dans le contenu de mon json initial        
-  $json_arr[] = array("archive" => $task);
+  $json_arr[] = array("tache" => $in,
+  "bool" => true);
   
   //enregistrer les modification
   file_put_contents('todo.json', json_encode($json_arr));
@@ -38,8 +31,17 @@ if(isset($_POST['fait'])){
       <h2>FAIT</h2>
       
   </div>';
-
-
+$task="bool";
+if ($task===true){
+  $i = 0;
+  foreach ($json_arr as $key => $value)) {
+ 
+  echo '<div class="content'.$i.' contenant">
+   <input type="checkbox" disabled checked name="fait[]'.$i.'" /> - Tache N° ' . $i . ": " . $value["tache"] .
+  '</div>' ;
+  $j++;
+};
+};
 
 
 ?>
