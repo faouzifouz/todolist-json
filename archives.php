@@ -9,10 +9,11 @@
 
   if(isset($_POST['fait'])){
     foreach($_POST['checkbox'] as $check) {
-    $in=$_POST['fait'];
+    $i=$_POST['fait'];
       echo '<div class="content'.$i.' contenant">
       <input type="checkbox" disabled checked name="fait[]'.$i.'" /> - Tache N° ' . $i . ": " . $check["tache"] .
      '</div>' ;
+     var_dump($check);
    
      
      //charger mon json
