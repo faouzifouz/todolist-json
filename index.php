@@ -1,6 +1,7 @@
 <?php
-require 'contenu.php';
-require 'archives.php';
+include './update.php';
+include './archives.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -15,23 +16,22 @@ require 'archives.php';
 </head>
 <body>
     
-    <section>
-    <?php
+    
+    <h1>TO DO FOUZ</h1>
+    <form action="index.php" method="post"> 
+        <h2>Tâches</h2>
+        <div id="task">
         
-    ?>
-<form action="index.php" method="post">
-  <input class="bt2" type="submit"  name="fait" value="Check" id="bouton"/>
-
-</form>
-</section>
-<section class="cat1">
-
-<form action="index.php" method="post"> 
-    <div class="btbas"><input class="bt1" type="submit" name='ajout' value="+"/></div>
-    <input type="text" name="ajout" placeholder="Ajout" class="ajouter"/>       
-</form>
-
-
-</section>
+        </div> 
+        <input class="bt1" type="submit" name='ajout' value="+"/>
+        <input type="text" name="ajout" placeholder="Ajout" class="ajouter"/>
+        <input type="submit" value="check" name="verifier">       
+        <h2>Archives</h2>
+        <div id="archive">
+      
+        </div>
+    </form>
+    
+<script src="./apps.js"></script>
 </body>
 </html>
